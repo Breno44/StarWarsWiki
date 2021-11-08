@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { Home, SplashScreen } from '../screens'
+import { Home, SplashScreen, Detail } from '../screens'
 
 export function Routes() {
   const Stack = createStackNavigator()
@@ -11,6 +11,7 @@ export function Routes() {
       <Stack.Navigator headerMode="none">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Detail" component={Detail} />
       </Stack.Navigator>
     </NavigationContainer>
   )
