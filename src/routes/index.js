@@ -1,7 +1,38 @@
 import React from 'react'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { BottomBar } from '~/components'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { Home, SplashScreen, Detail } from '../screens'
+import {
+  Home,
+  SplashScreen,
+  Detail,
+  SearchScreen,
+  FavoritesScreen,
+} from '../screens'
+
+const BottomRoute = () => {
+  const Tab = createBottomTabNavigator()
+
+  return (
+    <Tab.Navigator
+      tabBar={(props) => <BottomBar {...props} />}
+      screenOptions={{ headerShown: false }}
+    >
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen
+        options={{ tabBarLabel: 'Pesquisar' }}
+        name="Search"
+        component={SearchScreen}
+      />
+      <Tab.Screen
+        options={{ tabBarLabel: 'Favoritos' }}
+        name="Favorites"
+        component={FavoritesScreen}
+      />
+    </Tab.Navigator>
+  )
+}
 
 export function Routes() {
   const Stack = createStackNavigator()
@@ -10,7 +41,7 @@ export function Routes() {
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={BottomRoute} />
         <Stack.Screen name="Detail" component={Detail} />
       </Stack.Navigator>
     </NavigationContainer>
