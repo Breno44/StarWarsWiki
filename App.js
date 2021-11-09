@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler'
 import React from 'react'
+import { StatusBar } from 'react-native'
 import { SplashScreen } from './src/screens/SplashScreen'
 import { Home } from './src/screens/Home'
 import { ThemeProvider } from 'styled-components/native'
@@ -27,8 +28,15 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Routes />
-    </ThemeProvider>
+    <>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </>
   )
 }

@@ -5,7 +5,7 @@ import { Text } from '../../atoms'
 import { ListContainer } from './styles'
 import { theme } from '~/styles'
 
-export function HomeList({ data, title }) {
+export function HomeList({ data, title, type }) {
   return (
     <ListContainer>
       <Text fontFamily="black" size={18} ml={24}>
@@ -15,7 +15,7 @@ export function HomeList({ data, title }) {
         horizontal
         keyExtractor={(item) => String(item.id)}
         data={data}
-        renderItem={({ item }) => <Card item={item} />}
+        renderItem={({ item }) => <Card item={{ ...item, type }} />}
         contentContainerStyle={{
           paddingLeft: theme.metrics.px(24),
           paddingTop: theme.metrics.px(12),

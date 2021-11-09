@@ -12,7 +12,7 @@ export function PlayButton({ onPress }) {
         size={theme.metrics.px(14)}
         color={theme.colors.black}
       />
-      <Text color="dark" ml="6">
+      <Text color="dark" fontFamily="bold" size={14} ml="6">
         Play
       </Text>
     </PlayButtonContainer>
