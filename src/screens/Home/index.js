@@ -31,9 +31,11 @@ export function Home() {
     )
   }
 
+  const number = Math.floor(Math.random() * (films.length - 1) + 1)
+
   return (
     <ScreenScrollContainer>
-      <Hero item={{ ...films[0], type: 'Filme' }} />
+      <Hero item={{ ...films[number], type: 'Filme' }} />
       <HomeList data={films} title="Filmes" type="Filme" />
       <HomeList data={characters} title="Personagens" type="Personagem" />
     </ScreenScrollContainer>
