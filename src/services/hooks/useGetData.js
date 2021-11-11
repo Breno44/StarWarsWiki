@@ -6,7 +6,6 @@ export function useGetData() {
       const response = await api.get('/films')
       return response.data
     } catch (err) {
-      console.log(err)
       return { err }
     }
   }
@@ -16,7 +15,6 @@ export function useGetData() {
       const response = await api.get('/characters')
       return response.data
     } catch (err) {
-      console.log(err)
       return { err }
     }
   }
@@ -26,7 +24,6 @@ export function useGetData() {
       const response = await api.get(`search?query=${query}`)
       return response.data
     } catch (error) {
-      console.log({ error })
       return { error }
     }
   }

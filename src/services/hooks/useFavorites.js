@@ -19,7 +19,6 @@ export const useFavorites = () => {
       await AsyncStorage.setItem(DB_KEY, jsonValue)
       return newDb
     } catch (error) {
-      console.log({ error })
       return { error }
     }
   }
@@ -50,7 +49,6 @@ export const useFavorites = () => {
       await AsyncStorage.setItem(DB_KEY, jsonValue)
       return newDb
     } catch (error) {
-      console.log({ error })
       return { error }
     }
   }
